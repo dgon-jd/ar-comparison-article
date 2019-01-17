@@ -2,9 +2,9 @@
 
 Greetings, hero. You are living in the magic time when two worlds: reality and imagination create a new visible realm: Augmented/Virtual Reality. 
 
-There are plenty of instruments appeared in last five years and some of them can be used on a mobile platform - every-day thing for most people. So we decided to pick new technologies of two most popular platform: *ARKit* for iOS, *ARCore* for Android a compare it to popular *Vuforia* on both platforms using intensely growing Unity.
+There are plenty of instruments appeared in last five years and some of them can be used on mobile platform - every-day thing for most people. So we decided to pick new technologies of two most popular platform: *ARKit* for iOS, *ARCore* for Android a compare it to popular *Vuforia* on both platforms using intensly growing Unity.
 
-As initial recognition subject, we have taken Ciklum Bussiness Card.
+As inital recognition subject we have taken Ciklum Bussiness Card.
 Here are several points for comparison: 
 
 * Detect object distance
@@ -14,10 +14,10 @@ Here are several points for comparison:
 * Recognition in different rotations
 * Tracking during motion
 
-Also, we decided to try frameworks in different light environments:
+Also we decided to try frameworks on different light environments:
 
 * Good light (GL)
-* Average-bad light (BL)
+* Avarage-bad light (BL)
 
 ## Installation and building
 ### ARCore
@@ -25,23 +25,23 @@ Also, we decided to try frameworks in different light environments:
 In progress
 
 ### ARKit
-Takes second place. First, of course, you need to download Unity plugin. For our goals, we can use and modify UnityARImageAnchor example.
-We can add new images in a few steps: 
+Takes second place. First or course you need to download Unity plugin. For our goals we can use and modify UnityARImageAnchor example.
+We can adding new images in a few steps: 
 1. Copy image to the project
-2. Create ARReferenceImage asset for each image where we describe the name, texture (actual image) and it's physical size.
+2. Create ARReferenceImage asset for earch image where we describe name, texture (actual image) and it's physical size.
 3. Create ARReferenceImagesSet 
 4. In ARCameraManager Game Object select the reference to created ARReferenceImagesSet
 
-When any of the images described in the set are detected, events for add/update/remove specific  ARImageAnchor are triggered. We can use GenerateImageAnchor script to configure preflabs depending on detected ARReferenceImage.
+When any of the images described in the set are detected, events for add/update/remove specific  ARImageAnchor are triggered. We can use GenerateImageAnchor script to configure  preglabs depending on detected ARReferenceImage.
 
-When we configured our project it's time to run it. The usual procedure of building iOS project will run XCode, where you modify settings if you want and we can start testing.
+When we configured oru project it's time to run it. Usual procedure of building iOS project will run XCode, where you modify settings if you want and we can start testing.
 
 ### Vuforia
 The easiest thing to use. Install plugin and...
 
 1. Drop ARCamera to the scene
-2. Drop Vuforia Image with your image to the scene
-3. Drop an object to anchor the image as a child object to previous one.
+2. Drop Vuforia Image with your image to scene
+3. Drop any object to anchor the image as a child object to previous one.
 
 But that's not all. Yes, it's easy to use in projects but you need to do some work on their website.
 
@@ -49,12 +49,12 @@ But that's not all. Yes, it's easy to use in projects but you need to do some wo
 2. Create target and get your secret key
 3. !! Create database of images, download it and add to the project. It also has the same metadata as ARKit ARReferenceImage but it's hidden from you.
 
-In the DefaultTrackableEventHandler you can configure tracking behavior and grab some frames. 
+In the DefaultTrackableEventHandler you can configure tracking beavior and grab some frames. 
 Then do some usual platform-specific stuff (min ioS version etc.) Profit.
 
 ## Image selection:
 ### Vuforia
-Vuforia has a big [guide](https://library.vuforia.com/articles/Solution/Optimizing-Target-Detection-and-Tracking-Stability.html) how to select proper images for proper recognition. As it says: 
+Vuforia has a big [guide](https://library.vuforia.com/articles/Solution/Optimizing-Target-Detection-and-Tracking-Stability.html) how to select proper images for proper recogntion. As it says: 
 > Attributes of an Ideal Image Target
 > Rich in detail	
 > Good contrast	
@@ -106,7 +106,7 @@ You need ARCore Android SDK Tool - *arcoreimg* to create and estimate images. Ho
 
 ARKit | Vuforia (iOS) | Vuforia (Android) | ARCore
 --- | --- | --- | ---
-![ARKit](./images_comparison/images/iOS_ARKit_detect_distance.mp4) | ![Vuforia](./images_comparison/images/iOS_Vuforia_Distance_detect.mp4) | ![VuforiaAndroid](./images_comparison/images/Android_vuforia_detect_distance.mp4) | ![ARCore](./images_comparison/images/Android_arkit_distance.mp4)
+![ARKit](./images_comparison/iOS/Distance/Detect/iOS_ARKit_detect_distance.gif) | ![Vuforia](./images_comparison/iOS/Distance/Detect/iOS_Vuforia_Distance_detect.gif) | ![VuforiaAndroid](./images_comparison/Android/Android_vuforia_detect_distance.mp4) | ![ARCore](./images_comparison/Android/Android_arkit_distance.mp4)
 </details>
 
 <details>
@@ -114,7 +114,7 @@ ARKit | Vuforia (iOS) | Vuforia (Android) | ARCore
 
 ARKit | Vuforia (iOS) | Vuforia (Android) | ARCore
 --- | --- | --- | ---
-![ARKit](./images_comparison/images/iOS_ARKit_BL_distance_detect.mp4) | ![Vuforia](./images_comparison/images/iOS_Vuforia_BL_distance_detect.mp4) | No test | No test
+![ARKit](./images_comparison/iOS/Distance/Detect/iOS_ARKit_BL_distance_detect.gif) | ![Vuforia](./images_comparison/iOS/Distance/Detect/iOS_Vuforia_BL_distance_detect.gif) | No test | No test
 </details>
 
 <details>
@@ -122,7 +122,7 @@ ARKit | Vuforia (iOS) | Vuforia (Android) | ARCore
 
 ARKit | Vuforia (iOS) | Vuforia (Android) | ARCore
 --- | --- | --- | ---
-![ARKit](./images_comparison/images/iOS_ArKit_Lost_Distance.mp4) | ![Vuforia](./images_comparison/images/iOS_Vuforia_Distance_lost.mp4) | ![VuforiaAndroid](./images_comparison/images/Android_vuforia_lost_distance.mp4) | No test
+![ARKit](./images_comparison/iOS/Distance/Lost/iOS_ArKit_Lost_Distance.gif) | ![Vuforia](./images_comparison/iOS/Distance/Lost/iOS_Vuforia_Distance_lost.gif) | ![VuforiaAndroid](./images_comparison/Android/Android_vuforia_lost_distance.mp4) | No test
 </details>
 
 <details>
@@ -130,7 +130,7 @@ ARKit | Vuforia (iOS) | Vuforia (Android) | ARCore
 
 ARKit | Vuforia (iOS) | Vuforia (Android) | ARCore
 --- | --- | --- | ---
-![ARKit](./images_comparison/images/iOS_ARKit_BL_distance_lost.mp4) | ![Vuforia](./images_comparison/images/iOS_Vuforia_BL_distance.mp4) | No test | No test
+![ARKit](./images_comparison/iOS/Distance/Lost/iOS_ARKit_BL_distance_lost.gif) | ![Vuforia](./images_comparison/iOS/Distance/Lost/iOS_Vuforia_BL_distance.gif) | No test | No test
 </details>
 
 <details>
@@ -138,7 +138,7 @@ ARKit | Vuforia (iOS) | Vuforia (Android) | ARCore
 
 ARKit | Vuforia (iOS) | Vuforia (Android) | ARCore
 --- | --- | --- | ---
-![ARKit](./images_comparison/images/iOS_ArKit_Angle_detect.mp4) | ![Vuforia](./images_comparison/images/iOS_Vuforia_Detect_Angle.mp4) | ![VuforiaAndroid](./images_comparison/images/Android_vuforia_detect_angle.mp4) | ![ARCore](./images_comparison/images/Android_arkit_angle.mp4)
+![ARKit](./images_comparison/iOS/Angle/Detect/iOS_ArKit_Angle_detect.gif) | ![Vuforia](./images_comparison/iOS/Angle/Detect/iOS_Vuforia_Detect_Angle.gif) | ![VuforiaAndroid](./images_comparison/Android/Android_vuforia_detect_angle.mp4) | ![ARCore](./images_comparison/Android/Android_arkit_angle.mp4)
 </details>
 
 <details>
@@ -146,7 +146,7 @@ ARKit | Vuforia (iOS) | Vuforia (Android) | ARCore
 
 ARKit | Vuforia (iOS) | Vuforia (Android) | ARCore
 --- | --- | --- | ---
-![ARKit](./images_comparison/images/iOS_BL-ARKIT_Angle.mp4) | ![Vuforia](./images_comparison/images/iOS_Vuforia_BL_angle.mp4) | No test | No test 
+![ARKit](./images_comparison/iOS/Angle/Detect/iOS_BL-ARKIT_Angle.gif) | ![Vuforia](./images_comparison/iOS/Angle/Detect/iOS_Vuforia_BL_angle.gif) | No test | No test 
 </details>
 
 <details>
@@ -154,7 +154,7 @@ ARKit | Vuforia (iOS) | Vuforia (Android) | ARCore
 
 ARKit | Vuforia (iOS) | Vuforia (Android) | ARCore
 --- | --- | --- | ---
-![ARKit](./images_comparison/images/iOS_ArKit_Detect_Lost_Angle.mp4) | ![Vuforia](./images_comparison/images/iOS_Vuforia_Detect_Lost_Angle.mp4) | No test | No test
+![ARKit](./images_comparison/iOS/Angle/Lost/iOS_ArKit_Detect_Lost_Angle.gif) | ![Vuforia](./images_comparison/iOS/Angle/Lost/iOS_Vuforia_Detect_Lost_Angle.gif) | No test | No test
 </details>
 
 <details>
@@ -162,7 +162,7 @@ ARKit | Vuforia (iOS) | Vuforia (Android) | ARCore
 
 ARKit | Vuforia (iOS) | Vuforia (Android) | ARCore
 --- | --- | --- | ---
-![ARKit](./images_comparison/images/iOS_BL-ARKIT_Angle_lost.mp4) | ![Vuforia](./images_comparison/images/iOS_Vuforia_BL_angle.mp4) | No test | No test
+![ARKit](./images_comparison/iOS/Angle/Lost/iOS_BL-ARKIT_Angle_lost.gif) | ![Vuforia](./images_comparison/iOS/Angle/Lost/iOS_Vuforia_BL_angle.gif) | No test | No test
 </details>
 
 <details>
@@ -170,7 +170,7 @@ ARKit | Vuforia (iOS) | Vuforia (Android) | ARCore
 
 ARKit | Vuforia (iOS) | Vuforia (Android) | ARCore
 --- | --- | --- | ---
-![ARKit](./images_comparison/images/iOS_ArKit_back_angle.mp4) | ![Vuforia](./images_comparison/images/iOS_Vuforia_Back_angle_soso.mp4) | ![VuforiaAndroid](./images_comparison/images/Android_vuforia_detect_angle.mp4) | ![ARCore](./images_comparison/images/Android_arkit_back_angle.mp4)
+![ARKit](./images_comparison/iOS/BackAngle/iOS_ArKit_back_angle.gif) | ![Vuforia](./images_comparison/iOS/BackAngle/iOS_Vuforia_Back_angle_soso.gif) | ![VuforiaAndroid](./images_comparison/Android/Android_vuforia_detect_angle.mp4) | ![ARCore](./images_comparison/Android/Android_arkit_back_angle.mp4)
 </details>
 
 <details>
@@ -178,26 +178,26 @@ ARKit | Vuforia (iOS) | Vuforia (Android) | ARCore
 
 ARKit | Vuforia (iOS) | Vuforia (Android) | ARCore
 --- | --- | --- | ---
-![ARKit](./images_comparison/images/iOS_ArKit_Motion.mp4) | ![Vuforia](./images_comparison/images/iOS_Vuforia_Motion.mp4) | ![VuforiaAndroid](./images_comparison/images/Android_vuforia_motion.mp4) | No test
+![ARKit](./images_comparison/iOS/Motion/iOS_ArKit_Motion.gif) | ![Vuforia](./images_comparison/iOS/Motion/iOS_Vuforia_Motion.gif) | ![VuforiaAndroid](./images_comparison/Android/Android_vuforia_motion.mp4) | No test
 
 </details>
 
 ### Vuforia problems
 
 Android:
-![VuforiaAndroid](./images_comparison/images/Android_vuforia_angle_bad.mp4) 
+![VuforiaAndroid](./images_comparison/Android/Android_vuforia_angle_bad.mp4) 
 
 iOS:
 
-![Vuforia](./images_comparison/images/iOS_Vuforia_Back_angle_Bad.mp4)
+![Vuforia](./images_comparison/iOS/BackAngle/iOS_Vuforia_Back_angle_Bad.gif)
 ## Comparison results (clean bussiness card)
 
-Well, *ARKit* works "just okay" it detects objects and tracks it pretty good. At some points even better than Vuforia (I believe detect distance with bad light is even better). But as significant cons: it lost track when I moved object slightly.
+Well, *ARKit* works "just okay" it detects objects and tracks it pretty good. At some points even better than Vuforia (I believe detect distance with bad light is even better). But as significat cons: it lost tracking when I moved object slightly.
 
-From the other hand though *Vuforia* had some slightly worse results in detecting objects with bad light it is almost impossible to trick it when it drops the anchor. Even if the object lost its details Vuforia does a great job and in some situations, I just need to cover the object with hand to drop tracking.
-But at the same time I had bugs with simple build from the box on iOS platform: sometimes it just could not detect an object even if it's in front of the camera, it had problems to detect object if it was upside down and it even crashed when I changed device orientation. On Android, there were some troubles as well even with the well-looked object.
+From the other hand though *Vuforia* had some slightly worse results in detecting objects with bad light it is almost impossible to trick it when it drops the anchor. Even if object lost it's details Vuforia does a great job and in some situations I just need to cover object with hand to drop tracking.
+But at the same time I had bugs with simple build from the box on iOS platform: sometimes it just could not detect object even if it's in front of the camera, it had problems to detect object if it wasupside down and it even crushed when I changed device orientation. On Android there were some troubles as well even woth the good looked object.
 
-*ARCore* can detect only static images and seems it has it's own algorithms how to estimate image points. While Vuforia gave 5 stars of recognition-quality to the image, ARCore gave 0/100...However it detects the target with satisfactory accuracy, but this test is just not for him, because it lacks moving detection.
+*ARCore* can detect only static images and seems it has it's own algorithms how to estimate image points. While Vuforia gave 5 stars of recognition-quality to the image, ARCore gave 0/100...However it detects target with satisfactory accuracy, but this test is just not for him, because it lacks moving detection.
 
 Anyway, Unity has "AR Foundation" API which tries to operate ARCore and ARKit with the same facade, but it's still in development. 
 
@@ -205,58 +205,59 @@ Anyway, Unity has "AR Foundation" API which tries to operate ARCore and ARKit wi
 
 ## Let's update things
 
-All guides tell one simple rule: increasing count of contrast non-round-corner pictures leads to better image recognition. Let's add some different letters with different textures to the business card and see if it can recognize different images and if it improves quality:
+All guides tell one simple rule: increasing count of contrast non-round-corner pictures leads to better image recognition. Let's add some different letters with different textures to the business card and see if it can recognize different images and if it improves quallity:
 
 <details>
 <summary>Updated business card</summary>
 
 ARKit | Vuforia | ARCore
 --- | --- | ---
-![Vuforia](./images_comparison/images/Twice_2.mp4) | ![Vuforia](./images_comparison/images/Twice_1.mp4) | ![ARCore](./images_comparison/images/Twice_4.mp4)
-![Vuforia](./images_comparison/images/Twice_3.mp4) | |
+![Vuforia](./images_comparison/images/Twice_2.gif) | ![Vuforia](./images_comparison/images/Twice_1.gif) | ![ARCore](./images_comparison/images/Twice_4.mp4)
+![Vuforia](./images_comparison/images/Twice_3.gif) | |
 
 </details>
 
 As we can see *Vuforia* does a great job. Detection is pretty fast and it recognizes different images perfectly.
 
-*ARKit* works as in the previous example pretty well. It can see the difference between images, can calculate object position with good results. But when objects are close to the camera there are some bugs: sometimes it just thinks that there is the same image and shows time preflabs.
+*ARKit* works as in previous example pretty well. It can see difference between images, can calculate object position with good results. But when objects are close to camera there are some bugs: sometimes it just thinks that there is the same image and shows time preflabs.
  
 *ARCore* engine tells the same things about new cards:
 ![ARCodeTwice](./images_comparison/images/ARCode_twice.png)
-, though the first option has already 10/100.
-Nevertheless, it detects right both cards.
+, though the first option has alredy 10/100.
+Nevertheless it detects right both cards.
 
-## Unique things:
+## Unique thnigs:
 *Vuforia* has a lot of cool tricks, but most exciting is extended tracking, which makes it shine in most actions after the object was detected.
 
-*ARCore* has a possibility to upload anchors to the cloud, but works really clunky with Unity right now.
+*ARCore* has possibility to upload anchors to the cloud, but works really clunky with Unity right now.
 
 *ARKit* shines with face capturing they made with Unity last year.
 
 ## Full tech comparison
 
-Here is some table from Unity blog about the general state of tech race:
+Here is some table from Unity blog about general state of tech race:
 ![TechRace](./images_comparison/images/table-1-ar-blog-2.png)
 
 ## Pros and Cons
 ### Vuforia:
 Pros | Cons
 --- | ---
-The easiest way to setup among all 3 plugins | Sometimes detectection breaks on iOS
-Extended tracking that allows to track object even if it is barely visible | Not always detect objects in different angles (again iOS)
-Good detection distance | Has some troubles with versioning. In the moment of testing the last version of Vuforia and Unity does not work togather well on Android and it's known isssue
+Easy to setup | Has some problems on iOS
+Extended tracking | Not always detect objects in different angles (again iOS)
+Good detection distance | Has some troubles with versioning
 Good detection angle |
-Awesome motion tracking. Object does not disappear like in iOS |
-Long-time player on this stage (stable, innovative) | 
+Awesome motion tracking |
+Long-time player on this stage (stable, innovance) | 
 Multiplatform | 
 ### ARKit:
 Pros | Cons
 --- | ---
-Some kind of native API  | All measurements are average (comparing to Vuforia)
+Some kind of native API  | All measurements are avarage (comparing to Vuforia)
 Stable detection | Takes some time to setup with Unity
 
 ### ARCore:
 Pros | Cons
 --- | ---
-Works well if you need to place object once | Need some tricks to setup project
+Works good if you need to place object once | Need some tricks to setup project
  | Lack of motion detection
+		
